@@ -156,7 +156,9 @@ public class SeatReservationForm extends javax.swing.JFrame {
             }
             else
             {   
-                JOptionPane.showConfirmDialog(null, "First class is full. Would you like a seat in economy class?", null, JOptionPane.YES_NO_OPTION);
+                int dialogButton = JOptionPane.YES_NO_OPTION;
+                int reply = JOptionPane.showConfirmDialog(this, "First class is full. Would you like a seat in economy class?", "No seats available",dialogButton);
+                //JOptionPane.showConfirmDialog(null, "First class is full. Would you like a seat in economy class?", null, JOptionPane.YES_NO_OPTION);
                     if (reply == JOptionPane.YES_OPTION)
                         {
                             seats[ econ ] = true;
