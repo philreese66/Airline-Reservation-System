@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 public class SeatReservationForm extends javax.swing.JFrame {
 
-    int section = 1, first = 0, econ = 5, reply;
+    int section, first = 0, econ = 5, replyFirst, replyEconomy, dialogButton;
     boolean seats[];
         
     public SeatReservationForm() {
@@ -142,7 +142,7 @@ public class SeatReservationForm extends javax.swing.JFrame {
             seats[ index ] = false;
       
         
-        if ( evt.getSource() == classSubmitButton )
+        if (evt.getSource() == classSubmitButton)
         {
             section = Integer.parseInt(classInput.getText());
         }
@@ -156,16 +156,16 @@ public class SeatReservationForm extends javax.swing.JFrame {
             }
             else
             {   
-                int dialogButton = JOptionPane.YES_NO_OPTION;
-                int reply = JOptionPane.showConfirmDialog(this, "First class is full. Would you like a seat in economy class?", "No seats available",dialogButton);
-                //JOptionPane.showConfirmDialog(null, "First class is full. Would you like a seat in economy class?", null, JOptionPane.YES_NO_OPTION);
-                    if (reply == JOptionPane.YES_OPTION)
+                dialogButton = JOptionPane.YES_NO_OPTION;
+                replyFirst = JOptionPane.showConfirmDialog(this, "First class is full. Would you like a seat in economy class?", "No seats available",dialogButton);
+                    
+                    if (replyFirst == JOptionPane.YES_OPTION)
                         {
                             seats[ econ ] = true;
                             classOutput.setText("Economy Class");
                             seatOutput.setText("Seat #" + ++econ);
                         }
-                    if (reply == JOptionPane.NO_OPTION)
+                    if (replyFirst == JOptionPane.NO_OPTION)
                         {
                 JOptionPane.showMessageDialog(null,"Thank you for your time, Please check back again");
                         }
@@ -182,7 +182,21 @@ public class SeatReservationForm extends javax.swing.JFrame {
                 seatOutput.setText("Seat #" + ++econ);
             }
             else
-                classOutput.setText("Economy is full");
+            {    dialogButton = JOptionPane.YES_NO_OPTION;
+                replyEconomy = JOptionPane.showConfirmDialog(this, "Economy class is full. Would you like a seat in first class?", "No seats available",dialogButton);
+                    
+                    if (replyEconomy == JOptionPane.YES_OPTION)
+                        {
+                            seats[ first ] = true;
+                            classOutput.setText("First Class");
+                            seatOutput.setText("Seat #" + ++first);
+                        }
+                    if (replyEconomy == JOptionPane.NO_OPTION)
+                        {
+                JOptionPane.showMessageDialog(null,"Thank you for your time, Please check back again");
+                        }
+            }
+                //classOutput.setText("Economy is full");
         
             //else 
                 //classOutput.setText("Invalid Class");
