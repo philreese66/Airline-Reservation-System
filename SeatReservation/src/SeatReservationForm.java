@@ -7,15 +7,40 @@
  *
  * @author Philip
  */
+import java.awt.Color;
 import javax.swing.JOptionPane;
+import javax.swing.JTabbedPane;
+import javax.swing.SwingConstants;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class SeatReservationForm extends javax.swing.JFrame {
 
     int section, first = 0, econ = 5, replyFirst, replyEconomy, dialogButton;
     boolean seats[];
-        
+    
+    
     public SeatReservationForm() {
+        
         initComponents();
+        /*super ( "NHCC Airline Seat Reservation");
+        
+        initComponents();
+              
+        JTabbedPane tabbedPane = new JTabbedPane();
+        JLabel label1 = new JLabel("panel one", SwingConstants.CENTER);
+        JPanel panel1 = new JPanel();
+        panel1.add( label1);
+        tabbedPane.addTab ("Tab One", null, panel1, "First Panel");
+        
+        
+        JLabel label2 = new JLabel( "panel two", SwingConstants.CENTER);
+        JPanel panel2 = new JPanel();
+        panel2.setBackground (Color.YELLOW);
+        panel2.add(label2);
+        tabbedPane.addTab( "Tab Two", null, panel2, "Second Panel");
+        
+        add (tabbedPane);*/ 
     }
 
     //@SuppressWarnings("unchecked")
