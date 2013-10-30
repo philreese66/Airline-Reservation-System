@@ -27,6 +27,10 @@ import javax.swing.Box;
 public class NewLayout extends java.awt.Frame {
 
     int size = 3;
+    JLabel label1, labelInstructions, labelInstructions2, labelInstructions3, labelInstructions4;
+    JPanel panel1, panel2, panel3, panel4, panel5, panel6;
+    JButton submitButton;
+    JTextField userClass, seatNumber, statusClass;
     /**
      * Creates new form NewLayout
      */
@@ -40,20 +44,20 @@ public class NewLayout extends java.awt.Frame {
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.setSize( 625, 405);
         
-        JLabel label1 = new JLabel("Welcome to the seat reservation form", SwingConstants.CENTER);
-        JLabel labelInstructions = new JLabel ( "Please enter 1 for first");
-        JLabel labelInstructions2 = new JLabel ( "class or 2 for economy class");
-        JLabel labelInstructions3 = new JLabel ( "Your seat number is");
-        JLabel labelInstructions4 = new JLabel ( "Your class is");
-        JPanel panel4 = new JPanel ();
-        JPanel panel5 = new JPanel ();
-        JPanel panel6 = new JPanel ();
-        JButton jButton1 = new JButton("Submit");
-        JTextField userClass = new JTextField("", 15);
+        label1 = new JLabel("Welcome to the seat reservation form", SwingConstants.CENTER);
+        labelInstructions = new JLabel ( "Please enter 1 for first");
+        labelInstructions2 = new JLabel ( "class or 2 for economy class");
+        labelInstructions3 = new JLabel ( "Your seat number is");
+        labelInstructions4 = new JLabel ( "Your class is");
+        panel4 = new JPanel ();
+        panel5 = new JPanel ();
+        panel6 = new JPanel ();
+        submitButton = new JButton("Submit");
+        userClass = new JTextField("", 15);
         userClass.setMaximumSize( userClass.getPreferredSize() );
-        JTextField seatNumber = new JTextField("", 15);
+        seatNumber = new JTextField("", 15);
         seatNumber.setMaximumSize( userClass.getPreferredSize() );
-        JTextField statusClass = new JTextField("",15);
+        statusClass = new JTextField("",15);
         statusClass.setMaximumSize( userClass.getPreferredSize() );
         
         
@@ -67,7 +71,7 @@ public class NewLayout extends java.awt.Frame {
         panel4.add(Box.createRigidArea(new Dimension(0,15)));
         panel4.add( userClass);
         panel4.add(Box.createRigidArea(new Dimension(0,15)));
-        panel4.add(jButton1);
+        panel4.add(submitButton);
         
         Box vertical2 = Box.createVerticalBox();
         vertical2.add( Box.createRigidArea(new Dimension (12,4)));
@@ -85,7 +89,7 @@ public class NewLayout extends java.awt.Frame {
         
         
         
-        JPanel panel1 = new JPanel();
+        panel1 = new JPanel();
         
         panel1.setLayout (new BorderLayout ());
         
@@ -97,7 +101,7 @@ public class NewLayout extends java.awt.Frame {
         
         
         JLabel label2 = new JLabel( "panel two", SwingConstants.CENTER);
-        JPanel panel2 = new JPanel();
+        panel2 = new JPanel();
         panel2.setBackground (Color.YELLOW);
         panel2.setLayout( new BorderLayout());
         panel2.add(label2);
@@ -105,7 +109,7 @@ public class NewLayout extends java.awt.Frame {
         tabbedPane.addTab( "Seat Layout", null, panel2, "Second Panel");
         
         JLabel label3 = new JLabel( "This is where there would be about topics" );
-        JPanel panel3 = new JPanel();
+        panel3 = new JPanel();
         panel3.add(label3, BorderLayout.CENTER);
         tabbedPane.addTab( "About", null, panel3, "Third Panel");
         
