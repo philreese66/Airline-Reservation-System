@@ -47,11 +47,15 @@ public class NewLayout extends java.awt.Frame {
         JLabel labelInstructions4 = new JLabel ( "Your class is");
         JPanel panel4 = new JPanel ();
         JPanel panel5 = new JPanel ();
+        JPanel panel6 = new JPanel ();
         JButton jButton1 = new JButton("Submit");
         JTextField userClass = new JTextField("", 15);
         userClass.setMaximumSize( userClass.getPreferredSize() );
         JTextField seatNumber = new JTextField("", 15);
         seatNumber.setMaximumSize( userClass.getPreferredSize() );
+        JTextField statusClass = new JTextField("",15);
+        statusClass.setMaximumSize( userClass.getPreferredSize() );
+        
         
         
         Box vertical1 = Box.createVerticalBox();
@@ -74,6 +78,8 @@ public class NewLayout extends java.awt.Frame {
         panel5.add(seatNumber);
         panel5.add(Box.createRigidArea(new Dimension(0,15)));
         panel5.add(labelInstructions4);
+        panel5.add(Box.createRigidArea(new Dimension(0,15)));
+        panel5.add(statusClass);
         
         
         
@@ -98,11 +104,14 @@ public class NewLayout extends java.awt.Frame {
         panel2.add( new JButton( "West"), BorderLayout.WEST);
         tabbedPane.addTab( "Seat Layout", null, panel2, "Second Panel");
         
-        JLabel label3 = new JLabel( "panel three" );
+        JLabel label3 = new JLabel( "This is where there would be about topics" );
         JPanel panel3 = new JPanel();
-        panel3.setLayout(new BorderLayout());
         panel3.add(label3, BorderLayout.CENTER);
-        tabbedPane.addTab( "Tab Three", null, panel3, "Third Panel");
+        tabbedPane.addTab( "About", null, panel3, "Third Panel");
+        
+        JLabel label4 = new JLabel("This is where there would be help topics");
+        panel6.add(label4, BorderLayout.CENTER);
+        tabbedPane.addTab( "Help", null, panel6, "Fourth Panel");
         
         
         
