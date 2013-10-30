@@ -6,11 +6,11 @@ package images;
 
 /**
  *
- * @author Philip
+ * @author Philip Reese, Paul Steen, and Bao Ho
  */
 import java.awt.event.*;
-import java.awt.*;
-import java.awt.Color;
+//import java.awt.*;
+//import java.awt.Color;
 import javax.swing.JTabbedPane;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -18,13 +18,30 @@ import javax.swing.SwingConstants;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import javax.swing.JFrame;
+//import javax.swing.JFrame;
 import javax.swing.BoxLayout;
 import java.awt.Dimension;
 import javax.swing.Box;
 import javax.swing.JOptionPane;
 
-
+/**
+ * Seat reservation application, which allows users to choose First or Economy class, then assigns an
+ * appropriate seat, between numbers 1 and 10
+ * 
+ * @param section               an integer value of 1 or 2 to choose the section or class,
+ *                              1 for First Class, 2 for Economy
+ * @param first                 an integer value that is used to indicate a seat in First class,
+ *                              which would be the first 5 of 10 total seats, numbered 0-4
+ * @param econ                  an integer value that is used to indicate a seat in Economy class,
+ *                              which would the the next 5 of 10 total seats, numbered 5-9
+ * @param seats                 a boolean value that would indicate one of the 10 available seats
+ * @see SeatReservationForm
+ * @see classSubmitButtonActionPerformed 
+ * 
+ * @author Philip Reese
+ * @author Paul Steen
+ * 
+ */
 
 public class NewLayout extends java.awt.Frame implements ActionListener{
 
@@ -34,9 +51,13 @@ public class NewLayout extends java.awt.Frame implements ActionListener{
     JButton submitButton;
     JTextField userClass, seatNumber, statusClass;
     boolean seats[];
+    
     /**
-     * Creates new form NewLayout
+     * GUI design code generated with Netbeans
+     * 
+     * @author Philip Reese
      */
+    
     public NewLayout() {
         
         super ( "NHCC Airline Seat Reservation" );
@@ -94,7 +115,6 @@ public class NewLayout extends java.awt.Frame implements ActionListener{
         panel1.add (panel5, BorderLayout.EAST);
         tabbedPane.addTab ("Reserve Seats", null, panel1, "First Panel");
         
-        
         panel2 = new JPanel();
         panel2.setLayout( new BorderLayout());
         tabbedPane.addTab( "Seat Layout", null, panel2, "Second Panel");
@@ -112,7 +132,27 @@ public class NewLayout extends java.awt.Frame implements ActionListener{
         
         add (tabbedPane);
     }
-    
+    /**
+     * This section of code takes the class value entered by the user, 1 for First or 2 for Econ,
+     * and then assigns that class and a seat number within that classes section.
+     * 
+     * <p>
+     * If the user enters 1 and presses submit, the program recognizes that as First class, and 
+     * checks for an available seat number that is less than 5. If those values have not all been
+     * claimed, the program assigns a seat number 0-4. If all integer values less than 5 have been
+     * taken already, the program asks the user if they would like a seat in Economy
+     * <p>
+     * If the user enters 2 and presses submit, the program recognizes that as Economy class, and
+     * checks for an available seat number less than 10, starting from a value of 5. If all 5 of the
+     * Economy seats are full, the program offers the user a chance to look for a First class seat.
+     * 
+     * 
+     * @author Paul Steen
+     * @author Philip Reese
+     * 
+     * @param evt               an action event that responds when the submit button is pressed
+     *                          
+     */
     public void actionPerformed(ActionEvent evt)
     {
         seats = new boolean [10];
@@ -208,8 +248,12 @@ public class NewLayout extends java.awt.Frame implements ActionListener{
         System.exit(0);
     }//GEN-LAST:event_exitForm
 
-    /**
-     * @param args the command line arguments
+  /**
+     * The main class for the program
+     * 
+     * @param args
+     * 
+     * @author Philip Reese
      */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
