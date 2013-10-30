@@ -151,7 +151,7 @@ public class NewLayout extends java.awt.Frame implements ActionListener{
                         }
                     if (replyFirst == JOptionPane.NO_OPTION)
                         {
-                JOptionPane.showMessageDialog(null,"Thank you for your time, Please check back again");
+                JOptionPane.showMessageDialog(null,"Next flight leaves in three hours");
                         }
                 
                 //classOutput.setText("First Class is full");     
@@ -177,7 +177,7 @@ public class NewLayout extends java.awt.Frame implements ActionListener{
                         }
                     if (replyEconomy == JOptionPane.NO_OPTION)
                         {
-                JOptionPane.showMessageDialog(null,"Thank you for your time, Please check back again");
+                JOptionPane.showMessageDialog(null,"Next flight leaves in three hours");
                         }
             }
                 //classOutput.setText("Economy is full");
