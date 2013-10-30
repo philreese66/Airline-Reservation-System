@@ -95,12 +95,8 @@ public class NewLayout extends java.awt.Frame implements ActionListener{
         tabbedPane.addTab ("Reserve Seats", null, panel1, "First Panel");
         
         
-        JLabel label2 = new JLabel( "panel two", SwingConstants.CENTER);
         panel2 = new JPanel();
-        panel2.setBackground (Color.YELLOW);
         panel2.setLayout( new BorderLayout());
-        panel2.add(label2);
-        panel2.add( new JButton( "West"), BorderLayout.WEST);
         tabbedPane.addTab( "Seat Layout", null, panel2, "Second Panel");
         
         JLabel label3 = new JLabel( "This is where there would be about topics" );
@@ -116,9 +112,7 @@ public class NewLayout extends java.awt.Frame implements ActionListener{
         
         add (tabbedPane);
     }
-    //private void classSubmitButtonActionPerformed(java.awt.event.ActionEvent evt)
-    //public void actionPerformed(ActionEvent evt)
-    //private void submitButtonActionPerformed(java.awt.event.ActionEvent evt)
+    
     public void actionPerformed(ActionEvent evt)
     {
         seats = new boolean [10];
