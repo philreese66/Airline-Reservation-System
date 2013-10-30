@@ -45,7 +45,7 @@ import javax.swing.JOptionPane;
 
 public class NewLayout extends java.awt.Frame implements ActionListener{
 
-    int size = 3, section, first = 0, econ = 5, replyFirst, replyEconomy, dialogButton;
+    int size = 10, section, first = 0, econ = 5, replyFirst, replyEconomy, dialogButton;
     JLabel label1, labelInstructions, labelInstructions2, labelInstructions3, labelInstructions4;
     JPanel panel1, panel2, panel3, panel4, panel5, panel6;
     JButton submitButton;
@@ -65,7 +65,7 @@ public class NewLayout extends java.awt.Frame implements ActionListener{
         initComponents();
                 
         JTabbedPane tabbedPane = new JTabbedPane();
-        tabbedPane.setSize( 625, 405);
+        tabbedPane.setSize( 700, 500);
         
         label1 = new JLabel("Welcome to the seat reservation form", SwingConstants.CENTER);
         labelInstructions = new JLabel ( "Please enter 1 for first");
@@ -115,8 +115,19 @@ public class NewLayout extends java.awt.Frame implements ActionListener{
         panel1.add (panel5, BorderLayout.EAST);
         tabbedPane.addTab ("Reserve Seats", null, panel1, "First Panel");
         
+        Box vertical3 = Box.createVerticalBox();
+        for (int count = 1; count < size; count++)
+            {
+                vertical3.add ( Box.createRigidArea( new Dimension ( 8, 1)));
+                vertical3.add ( new JButton ( "Seat" + count));
+            }
         panel2 = new JPanel();
-        panel2.setLayout( new BorderLayout());
+        panel2.setLayout( new BoxLayout (panel2, BoxLayout.Y_AXIS));
+        for (int count = 1; count < size; count++)
+            {
+                panel2.add( Box.createGlue());
+                panel2.add( new JButton( "Seat" + count));
+            }
         tabbedPane.addTab( "Seat Layout", null, panel2, "Second Panel");
         
         JLabel label3 = new JLabel( "This is where there would be about topics" );
